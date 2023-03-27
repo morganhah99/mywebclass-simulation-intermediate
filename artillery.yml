@@ -1,0 +1,15 @@
+config:
+  target: "http://localhost:3000"
+
+scenarios:
+  - name: "Test Web Application Title"
+    flow:
+      - get:
+          url: "/"
+      - test: "Check Title"
+          async: true
+          script: |
+            const { test, expect } = require('@playwright/test');
+            test('Should have MyWebClass.org title', async ({ page }) => {
+              await expect(page).toHaveTitle('MyWebClass.org');
+            });
