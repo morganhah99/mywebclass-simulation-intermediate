@@ -7,9 +7,9 @@ scenarios:
       - get:
           url: "/"
       - test: "Check Title"
-          async: true
-          script: |
-            const { test, expect } = require('@playwright/test');
-            test('Should have MyWebClass.org title', async ({ page }) => {
-              await expect(page).toHaveTitle('MyWebClass.org');
-            });
+    async: true
+    script: |
+      const { test, expect } = require('@playwright/test');
+      test('Should have MyWebClass.org title', async ({ page }) => {
+        await expect(page).toHaveTitle('MyWebClass.org');
+      });
